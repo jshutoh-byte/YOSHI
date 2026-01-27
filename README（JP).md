@@ -1,67 +1,39 @@
-# Ghost Washer 👻🧼
+# YOSHI! (Ghost Washer) 🐈✨ 👉😸
 
-**画像のメタデータ（Exif）をピクセル再構成によって「物理的に」洗浄するプライバシー保護ツール。**
-*現場猫流「ヨシッ！」と、エンジニア流「LGTM」で安全確認。*
+**「その写真、SNSにあげてヨシッ！？」——デジタル足跡をバイナリレベルで完全洗浄。**
+*A bilingual privacy shield that "washes" metadata through pixel reconstruction.*
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Privacy-Protected-red.svg)
 
-## 📖 概要 (Overview)
-**Ghost Washer** は、SNS投稿時の「特定」リスクから身を守るために開発された、強力な画像洗浄ツールです。
-一般的な削除ツールとは異なり、画像データをピクセル単位で新しいキャンバスに描き直すことで、見えない情報（Exif, GPS, MakerNotes）を物理的に断ち切ります。
+## 📖 概要
+**YOSHI!** は、SNS投稿時の「特定」という名の恐怖からあなたを守るために爆誕しました。
+
+一般的なメタデータ削除ツールは、ただタグを消すだけ。しかし「特定班」の執念を舐めてはいけません。<br>
+本ツールは、**画像をピクセル単位で新しいキャンバスに描き直す（Reconstruction）** という物理的洗浄を行い、<br>
+Exif、GPS、メーカー固有の不可視領域（MakerNotes）を文字通り粉砕します。
+
+デジタルタトゥーを残したくない、すべての人に「ヨシッ！」という確実な安心を。
+
+## ✨ 特徴
+* **🌍 多言語・現場確認モード**
+    * **日本語**: 現場猫リスペクトの **「ヨシッ！ (Yoshi!)」**。何一つ残っていないことを確認。
+    * **English**: グローバル標準の **「LGTM (Looks Good To Me)」**。
+* **🛡️ 物理的ピクセル洗浄**
+    * `Image.new` + `putdata` + `exif=b""`。バイナリの奥底まで真っ白に洗い流します。
+* **🚀 爆速「ヨシッ！」ワークフロー**
+    * ドラッグ＆ドロップで連続処理。現場写真をサクサク「洗浄」して「確認」できます。
+* **👁️ 徹底したダブルチェック**
+    * 洗浄後のファイルを再度ドロップしてください。猫ちゃんが「ヨシッ！」と言えば、そこにはもう何も残っていません。
+
+## 🖼️ 仕組み
+1.  **スキャン**: ドロップされた画像から「足跡」を暴き出します。
+2.  **洗浄 (Wash)**: 「はい」の一言で、ピクセルデータだけを抽出して再構築。
+3.  **保存**: `_washed` が付いた、世界一クリーンな画像が生成されます。
+4.  **最終確認**: 自分の手で再度ドロップして、**「ヨシッ！」** のポーズを確認してください。
 
 ---
-
-## 🔰 使い方 (How to Use)
-**難しい操作は一切ありません。以下の4ステップで「ヨシッ！」しましょう。**
-
-1.  **起動する**
-    * アプリを起動し、言語を選択します。（日本語：ヨシッ！モード / English：LGTM Mode）
-2.  **ドロップする**
-    * 調べたい画像をウィンドウにドラッグ＆ドロップします。（何枚でも連続でOK！）
-    * アプリが自動で「隠された情報」がないかスキャンします。
-3.  **洗浄する**
-    * 「危険なデータ」が見つかった場合、警告が出ます。「洗浄しますか？」で「はい」を押してください。
-    * 元の画像の場所に `_washed` という名前がついた安全なファイルが保存されます。
-4.  **最終確認（ヨシッ！）**
-    * できた `_washed` ファイルを、**もう一度アプリにドロップ**してください。
-    * **「何の情報もありません。ヨシッ！ 👉😸✨」** と表示されれば、SNSに投稿しても安全です。
-
----
-
-## 🔧 技術的仕組み (Technical Mechanism)
-**※ここから先は「なぜ安全なのか」を知りたい方向けの解説です。**
-
-Ghost Washerは、バイナリタグを削除するだけの一般的なツールとは異なり、以下の**「再構築（Reconstruction）」プロセス**を経て画像を洗浄します。
-
-1. **ピクセルの抽出 (Extraction)**
-   * `Image.open()` で展開されたデータから、「色情報（RGB値）」のみを純粋なリストとして抽出します。
-2. **キャンバスの新規作成 (New Canvas)**
-   * メタデータ領域が一切存在しない、100%真っさらなキャンバス (`Image.new`) をメモリ上に生成します。
-3. **物理的な再描画 (Physical Redraw)**
-   * 抽出したピクセルデータを、新しいキャンバスへ一画素ずつ転写 (`putdata`) します。
-4. **情報の完全な断絶 (Total Isolation)**
-   * これにより、Exif、GPSだけでなく、削除漏れが起きやすい**メーカー独自の隠し領域（MakerNotes）**なども、物理的に継承することなく断ち切ります。
-
-> [!NOTE]
-> **画質について**: ピクセル値（色）をそのまま転写するため、目視でわかるような画質の劣化は発生しません。特定班の解析（Digital Forensics）を無効化しつつ、写真の美しさはそのまま保存されます。
-
----
-
-## 🛠️ 動作環境 & インストール
-
-* Python 3.x
-* [Pillow](https://python-pillow.org/)
-* [tkinterdnd2](https://github.com/pmgagne/tkinterdnd2)
-
-```bash
-# 1. Clone
-git clone [https://github.com/jshutoh-byte/GhostWasher.git](https://github.com/jshutoh-byte/GhostWasher.git)
-cd GhostWasher
-
-# 2. Install Requirements
-pip install -r requirements.txt
-
-# 3. Run
-python ghost_washer.py
+<div align="center">
+  <p>To be is TOBE. (あるがままの「0」を救済し、不純物を洗い流す。)</p>
+  <p>© 2026 J. Shuto (@jshutoh-byte)</p>
+</div>
