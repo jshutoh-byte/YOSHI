@@ -1,72 +1,37 @@
-# Ghost Washer 👻🧼
+# YOSHI! (Ghost Washer) 🐈✨ 👉😸
 
-**A bilingual privacy shield that "physically" washes image metadata via pixel reconstruction.**
-*Safety check with Japanese "Yoshi!" style or Global "LGTM" style.*
+**"Is your photo safe to share? —— Wash away digital footprints at the binary level."**
+*画像のメタデータ（Exif）をピクセル再構成によって「物理的に」洗浄。*
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Privacy-Protected-red.svg)
 
 ## 📖 Overview
-**Ghost Washer** is a powerful image sanitization tool designed to protect you from OSINT (Open Source Intelligence) investigations and accidental data leaks on social media.
+**YOSHI!** was born from the fear of "Doxing" (identifying individuals from photos). 
 
-Unlike standard tools that simply delete metadata tags, Ghost Washer **reconstructs the image pixel-by-pixel onto a new canvas**. This process physically isolates and discards all invisible data, including Exif, GPS coordinates, and proprietary "MakerNotes".
+While standard metadata strippers just delete tags, "Internet Detectives" are relentless. This tool **reconstructs the image pixel-by-pixel** onto a brand-new canvas, physically severing Exif, GPS, and hidden "MakerNotes."
 
-It provides a visual and psychological "Safety Check" before you post.
+For anyone who wants to avoid a permanent "Digital Tattoo," YOSHI! provides a definitive "LGTM" (Looks Good To Me) for your peace of mind.
 
----
+## ✨ Features
+* **🌍 Bilingual Safety Modes**
+    * **English**: Featuring the global engineering standard: **"LGTM! 👉😸✨"**
+    * **Japanese**: Featuring the cult-classic "Genba Neko" style: **"ヨシッ！ (Yoshi!)"**
+* **🛡️ Physical Pixel Wash**
+    * Uses `Image.new` + `putdata` + `exif=b""`. It doesn't just edit; it rebuilds. [cite: 2026-01-27]
+* **🚀 High-Speed "YOSHI!" Workflow**
+    * Simple Drag & Drop interface. Wash and verify continuous batches of "field photos" in seconds.
+* **👁️ Absolute Verification**
+    * Drop the washed file back into the tool. When the cat says **"LGTM!"**, you can be 100% sure there's nothing left.
 
-## 🔰 How to Use
-**No complex operations required. Just 4 steps to get "LGTM!"**
-
-1.  **Launch**
-    * Run the app and select your mode:
-        * **English**: "LGTM Mode" (Global standard)
-        * **Japanese**: "Yoshi! Mode" (Genba Neko style)
-2.  **Drop**
-    * Drag & drop your photos into the window. (Supports multiple files!)
-    * The app automatically scans for hidden "danger" signals.
-3.  **Wash**
-    * If metadata is detected, a warning appears. Click "Yes" to wash.
-    * A clean file with the suffix `_washed` will be saved in the same folder.
-4.  **Verify (LGTM!)**
-    * **Drop the `_washed` file again** to double-check.
-    * When you see **"No information found. LGTM! 👉😸✨"**, it is 100% safe to post.
+## 🖼️ How it Works
+1.  **Scan**: The tool uncovers the hidden "footprints" in your dropped image.
+2.  **Wash**: With one click, it extracts raw pixel data and reconstructs a clean image. [cite: 2026-01-27]
+3.  **Save**: Generates a world-class clean image with a `_washed` suffix.
+4.  **Verify**: Re-drop it yourself to confirm the **"LGTM!"** pose.
 
 ---
-
-## 🔧 Technical Mechanism
-**※ For developers and privacy enthusiasts:**
-
-Ghost Washer ensures a "Zero-Footprint" result through a **Physical Reconstruction Process**, rather than just editing binary tags.
-
-1.  **Pixel Extraction**
-    * Extracts only the raw RGB color data from the source image using `Image.open()`.
-2.  **New Canvas Creation**
-    * Generates a completely fresh canvas (`Image.new`) in memory that has never held metadata.
-3.  **Physical Redraw**
-    * Transcribes the extracted pixel data one by one onto the new canvas (`putdata`).
-4.  **Total Isolation**
-    * This guarantees that **Exif**, **GPS**, and stubborn **MakerNotes** (hidden manufacturer data) are physically impossible to inherit.
-
-> [!NOTE]
-> **Image Quality**: Since the pixel values (colors) are transferred directly, there is no visible degradation in quality. Your memories remain beautiful, but your digital footprint vanishes.
-
----
-
-## 🛠️ Requirements & Installation
-
-* Python 3.x
-* [Pillow](https://python-pillow.org/)
-* [tkinterdnd2](https://github.com/pmgagne/tkinterdnd2)
-
-```bash
-# 1. Clone the repository
-git clone [https://github.com/jshutoh-byte/GhostWasher.git](https://github.com/jshutoh-byte/GhostWasher.git)
-cd GhostWasher
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run the application
-python ghost_washer.py
+<div align="center">
+  <p>To be is TOBE. (Save the '0', wash the impurities.)</p>
+  <p>© 2026 J. Shuto (@jshutoh-byte)</p>
+</div>
