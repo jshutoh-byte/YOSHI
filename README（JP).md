@@ -34,6 +34,7 @@ Exif、GPS、メーカー固有の不可視領域（MakerNotes）を文字通り
 
 ---
 <div align="center">
-  <p>To be is TOBE. (あるがままの「0」を救済し、不純物を洗い流す。)</p>
+  
   <p>© 2026 J. Shuto (@jshutoh-byte)</p>
 </div>
+
